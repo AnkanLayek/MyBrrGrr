@@ -71,11 +71,11 @@ function Home() {
                         </div>
                         <div className="mt-6 w-full">
                             {menuLoading
-                                ? <div className="w-full m-12 flex flex-col items-center">
+                                ? <div className="w-full my-12 flex flex-col items-center">
                                     <HashLoader
                                         color="#e17100"
                                     />
-                                    <p className="text-3xl text-amber-600 mt-5 font-serif">Loading Menu...</p>
+                                    <p className="text-3xl text-center text-amber-600 mt-5 font-serif">Loading Menu...</p>
                                 </div>
                                 : <>
                                     {allItems.length == 0
@@ -100,26 +100,6 @@ function Home() {
                                         </div>
                                     }
                                 </>
-
-                                // : <div className="grid gap-6
-                                //                 sm:grid-cols-2
-                                //                 md:grid-cols-3
-                                //                 lg:grid-cols-4"
-                                // >
-                                //     {allItems.length == 0
-                                //         ? <div className="h-60 text-amber-600 flex justify-center items-center
-                                //                           sm:col-span-2
-                                //                           md:col-span-3
-                                //                           lg:col-span-4">
-                                //             No items to show
-                                //         </div>
-                                //         : <></>
-                                //     }
-                                //     {allItems.map((eachItem, idx) => (
-                                //         <ItemComponent key={idx} role="user" item={eachItem} />
-                                //     ))}
-
-                                // </div>
                             }
                         </div>
                         

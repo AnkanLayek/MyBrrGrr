@@ -76,11 +76,11 @@ function ExploreMenu (){
                             All Items
                         </h2>
                         {menuLoading
-                            ? <div className="w-full h-[calc(100vh-17.25rem)] m-12 flex flex-col justify-center items-center">
+                            ? <div className="w-full h-[calc(100vh-17.25rem)] my-12 flex flex-col justify-center items-center">
                                 <HashLoader
                                     color="#e17100"
                                 />
-                                <p className="text-3xl text-amber-600 mt-5 font-serif">Loading Menu...</p>
+                                <p className="text-3xl text-center text-amber-600 mt-5 font-serif">Loading Menu...</p>
                             </div>
                             : <div className="flex flex-col gap-10">
                                 {allItems.length>0

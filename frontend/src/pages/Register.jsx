@@ -93,13 +93,32 @@ function Register(){
         <>
             <div className="fullPage w-screen">
                 <main>
-                    <div className="w-screen h-screen bg-gradient-to-tr from-amber-600 to-amber-400 flex justify-around items-center">
-                        <div className="text-white">
-                            <p className="text-5xl font-thin mb-3">Welcome To</p>
-                            <p className=" text-6xl font-[Lucida_Handwriting]">MyBrrGrr</p>
+                    <div className="w-screen h-screen bg-gradient-to-tr from-amber-600 to-amber-400 flex justify-around items-center
+                                       flex-col
+                                    md:flex-row"
+                    >
+                        <div className="text-white
+                                        hidden
+                                        md:block"
+                        >
+                            <p className="font-thin mb-3
+                                             text-4xl
+                                          lg:text-5xl"
+                            >
+                                Welcome To
+                            </p>
+                            <p className="font-[Lucida_Handwriting]
+                                             text-5xl
+                                          lg:text-6xl"
+                            >
+                                MyBrrGrr
+                            </p>
                         </div>
 
-                        <div className="w-[28rem] p-6 backdrop-blur-2xl bg-[rgba(255,255,255,0.6)] flex flex-col items-center gap-3 relative">
+                        <div className="p-6 backdrop-blur-2xl bg-[rgba(255,255,255,0.6)] flex flex-col items-center gap-3 relative
+                                           w-[90%]
+                                        sm:w-[28rem]"
+                        >
                             <div className="w-24 top-0 -translate-y-1/2 absolute">
                                 <img src={LoginBurgerImg} alt="" className="aspect-[1.2]"/>
                             </div>
