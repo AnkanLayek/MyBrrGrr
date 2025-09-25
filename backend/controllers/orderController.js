@@ -26,12 +26,11 @@ class orderController {
                 paymentType
             });
     
-            
             if(createdOrder){
                 await Promise.all(orderIngredients.map((eachIngredient) => {
                     return ingredientModel.findOneAndUpdate(
                         {_id: eachIngredient._id},
-                        {$inc: {ingredientQuantity: - orderIngredientsQuantities[eachIngredient._id] * eachIngredient.ingredientQuantityPerBurger}},
+                        {$inc: {ingredientQuantity: - orderIngredientsQuantities[eachIngredient._id] * eachIngredient.ingredientQuantityPerBurger * createdOrder.noOfItems}},
                         {new: true}
                     )
                 }))
