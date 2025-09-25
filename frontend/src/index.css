@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar {
+    display: none
+}
+
+.num::-webkit-inner-spin-button
+.num::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body::selection {
+    background-color: rgba(201, 151, 255, 0.7);
+}
+
+/* PlacedOrders.jsx */
+
+.placedOrdersTable th,
+.placedOrdersTable td {
+    border-bottom: 1px solid gray;
+    padding: 8px;
+}
+
+@media (max-width: 390px) {
+    .orderPriceCol {
+        display: none;
+    }
+}
+
+@keyframes mySlide {
+    0%, 50%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        z-index: 1;
+    }
+    25% {
+        transform: translateX(0.6rem);
+    }
+    75% {
+        transform: translateX(-0.6rem);
+    }
+}
+
+@keyframes -mySlide {
+    0%, 50%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-0.6rem);
+    }
+    75% {
+        transform: translateX(0.6rem);
+    }
+}
