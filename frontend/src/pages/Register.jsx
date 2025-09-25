@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 // import { faEye } from "@fortawesome/free-regular-svg-icons";
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function Register(){
     const [fullName, setFullName] = useState('');
@@ -67,7 +67,7 @@ function Register(){
             setFormErr("Password is required")
         }
         else{
-            const responce = await fetch(`${backend_url}/user/register`, {
+            const responce = await fetch(`${backendUrl}/user/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'

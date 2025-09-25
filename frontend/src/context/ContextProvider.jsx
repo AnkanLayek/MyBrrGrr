@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 export const userContext = createContext();
 
@@ -25,7 +25,7 @@ const ContextProvider = ( {children} ) => {
 
     const fetchVisitorDetails = async () => {
         try {
-            const response = await fetch(`${backend_url}/visitorDetails/get`, {
+            const response = await fetch(`${backendUrl}/visitorDetails/get`, {
                 method: 'GET',
                 credentials: "include"
             })

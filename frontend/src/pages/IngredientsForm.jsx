@@ -8,7 +8,7 @@ import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom"
 import { HashLoader } from "react-spinners"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function IngredientsForm () {
     const [currIngredient, setCurrIngredient] = useState({})
@@ -65,7 +65,7 @@ function IngredientsForm () {
         e.preventDefault()
 
         try {
-            const responce = await fetch(`${backend_url}/ingredient/create`, {
+            const responce = await fetch(`${backendUrl}/ingredient/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -105,7 +105,7 @@ function IngredientsForm () {
         e.preventDefault()
 
         try {
-            const responce = await fetch(`${backend_url}/ingredient/edit`, {
+            const responce = await fetch(`${backendUrl}/ingredient/edit`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -142,7 +142,7 @@ function IngredientsForm () {
             // setAllowConfirmationPopup(true)
 
             // if(confirmationPopupBtnReturn == 'yes'){
-                const responce = await fetch(`${backend_url}/ingredient/delete`, {
+                const responce = await fetch(`${backendUrl}/ingredient/delete`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type' : 'application/json'
@@ -215,7 +215,7 @@ function IngredientsForm () {
         setIngredientsLoading(true)
 
         try {
-            const responce = await fetch(`${backend_url}/ingredient/get`, {
+            const responce = await fetch(`${backendUrl}/ingredient/get`, {
                 method: 'GET',
                 headers: {
                     'Content-Type' : 'application/json'

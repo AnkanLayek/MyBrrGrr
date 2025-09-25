@@ -6,7 +6,7 @@ import PopUpComponent from './PopUpComponent';
 import { useOrders } from '../context/AllOrdersContext';
 import { Link, useLocation } from 'react-router-dom';
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function NavBarComponent () {
     const [isMenuExpanded, setIsMenuExpanded] = useState(false);
@@ -27,7 +27,7 @@ function NavBarComponent () {
     const handleLogout = async () => {
         setLoadingLogout(true);
         try {
-            const responce = await fetch(`${backend_url}/log/out`, {
+            const responce = await fetch(`${backendUrl}/log/out`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

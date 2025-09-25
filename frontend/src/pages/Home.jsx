@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import { Audio, BallTriangle, Bars, Circles, Grid, Hearts, Oval, TailSpin } from "react-loader-spinner"
 import { ClimbingBoxLoader, HashLoader } from "react-spinners"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function Home() {
     const [allItems, setAllItems] = useState([]);
@@ -20,7 +20,7 @@ function Home() {
     const fetchAllItems = async () => {
         setMenuLoading(true)
         try {
-            const responce = await fetch(`${backend_url}/item/getItems?populateIngredient=true`, {
+            const responce = await fetch(`${backendUrl}/item/getItems?populateIngredient=true`, {
                 method: 'GET',
             })
 

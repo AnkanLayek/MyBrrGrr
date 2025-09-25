@@ -9,7 +9,7 @@ import PopUpComponent from "../components/PopUpComponent"
 import { useOrders } from "../context/AllOrdersContext"
 import { PulseLoader } from "react-spinners"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const razorpay_key_id = import.meta.env.VITE_RAZORPAY_KEY_ID;
 
@@ -34,7 +34,7 @@ function Order () {
 
     const fetchVisitorDetails = async () => {
         try {
-            const response = await fetch(`${backend_url}/visitorDetails/get`, {
+            const response = await fetch(`${backendUrl}/visitorDetails/get`, {
                 method: 'GET',
                 credentials: "include"
             })
@@ -101,7 +101,7 @@ function Order () {
         }
 
         // creating new payment order
-        const response = await fetch(`${backend_url}/razorpay/createOrder`, {
+        const response = await fetch(`${backendUrl}/razorpay/createOrder`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -133,7 +133,7 @@ function Order () {
                 description: 'Payment for ordering burger',
                 order_id,
                 handler: async (response) => {
-                    const verificationResponse = await fetch(`${backend_url}/razorpay/verifyPayment`, {
+                    const verificationResponse = await fetch(`${backendUrl}/razorpay/verifyPayment`, {
                         method: 'POST',
                         headers: {
                             "Content-Type": "application/json"
@@ -199,7 +199,7 @@ function Order () {
         
         setIsLoadingPlaceOrder(true)
         try {
-            const response = await fetch(`${backend_url}/order/create`, {
+            const response = await fetch(`${backendUrl}/order/create`, {
                 method: 'POST',
                 body: JSON.stringify({
                     orderName: item.itemName,

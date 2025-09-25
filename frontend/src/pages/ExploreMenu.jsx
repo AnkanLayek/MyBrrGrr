@@ -4,7 +4,7 @@ import NavBarComponent from "../components/NavBarComponent"
 import { HashLoader } from "react-spinners";
 import { useSearchParams } from "react-router-dom";
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function ExploreMenu (){
     const [allItems, setAllItems] = useState([]);
@@ -16,7 +16,7 @@ function ExploreMenu (){
     const fetchSingleItem = async () => {
         setMenuLoading(true)
         try {
-            const responce = await fetch(`${backend_url}/item/getItems/${itemId}?populateIngredient=true`, {
+            const responce = await fetch(`${backendUrl}/item/getItems/${itemId}?populateIngredient=true`, {
                 method: 'GET',
             })
 
@@ -34,7 +34,7 @@ function ExploreMenu (){
     const fetchAllItems = async () => {
         setMenuLoading(true)
         try {
-            const responce = await fetch(`${backend_url}/item/getItems?populateIngredient=true`, {
+            const responce = await fetch(`${backendUrl}/item/getItems?populateIngredient=true`, {
                 method: 'GET',
             })
 

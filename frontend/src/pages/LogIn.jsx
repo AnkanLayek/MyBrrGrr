@@ -7,7 +7,7 @@ import { userContext } from "../context/ContextProvider"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function LogIn(){
     const [email, setEmail] = useState('');
@@ -45,7 +45,7 @@ function LogIn(){
             setFormErr("Password is required")
         }
         else{
-            const responce = await fetch(`${backend_url}/log/in`, {
+            const responce = await fetch(`${backendUrl}/log/in`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'

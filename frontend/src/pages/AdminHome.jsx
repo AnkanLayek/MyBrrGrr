@@ -11,7 +11,7 @@ import PopUpComponent from "../components/PopUpComponent"
 import { useContext } from "react"
 import { userContext } from "../context/ContextProvider"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function AdminHome() {
     const [allItems, setAllItems] = useState([]);
@@ -28,7 +28,7 @@ function AdminHome() {
     const fetchAllItems = async () => {
         setMenuLoading(true)
         try {
-            const responce = await fetch(`${backend_url}/item/getItems`, {
+            const responce = await fetch(`${backendUrl}/item/getItems`, {
                 method: 'GET',
             })
 
@@ -51,7 +51,7 @@ function AdminHome() {
 
         setItemDeleteLoading(true);
         try {
-            const response = await fetch(`${backend_url}/item/delete`, {
+            const response = await fetch(`${backendUrl}/item/delete`, {
                 method: 'DELETE',
                 body: JSON.stringify({
                     _id: itemId

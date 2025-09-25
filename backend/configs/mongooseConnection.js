@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://127.0.0.1:27017/MyBrrGrr")
+const mongoUri = process.env.MONGO_URI
+
+mongoose.connect(mongoUri)
 .then(() => {
     console.log("Connected to database")
 })

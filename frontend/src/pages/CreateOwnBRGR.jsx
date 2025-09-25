@@ -8,7 +8,7 @@ import IngredientUserComponent from "../components/IngredientUserComponent"
 import { useNavigate, useSearchParams } from "react-router-dom"
 import { ClockLoader, SyncLoader } from "react-spinners"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function CreateOwnBRGR () {
     const [item, setItem] = useState({})
@@ -118,7 +118,7 @@ function CreateOwnBRGR () {
         setLoadingIngredients(true)
 
         try {
-            const responce = await fetch(`${backend_url}/ingredient/get`, {
+            const responce = await fetch(`${backendUrl}/ingredient/get`, {
                 method: 'GET',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -151,7 +151,7 @@ function CreateOwnBRGR () {
     const fetchItemDetails = async (ingredients) => {
         setLoadingItemDetails(true)
 
-        const responce = await fetch(`${backend_url}/item/getItems/${itemId}?populateIngredient=true`, {
+        const responce = await fetch(`${backendUrl}/item/getItems/${itemId}?populateIngredient=true`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'

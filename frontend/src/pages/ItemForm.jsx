@@ -9,7 +9,7 @@ import NavBarComponent from "../components/NavBarComponent.jsx"
 import PopUpComponent from "../components/PopUpComponent.jsx"
 import { ClockLoader, SyncLoader } from "react-spinners"
 
-const backend_url = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function ItemForm() {
     const [itemName, setItemName] = useState("")
@@ -31,7 +31,7 @@ function ItemForm() {
         setLoadingIngredients(true)
 
         try {
-            const responce = await fetch(`${backend_url}/ingredient/get`, {
+            const responce = await fetch(`${backendUrl}/ingredient/get`, {
                 method: 'GET',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -54,7 +54,7 @@ function ItemForm() {
     const fetchItemDetails = async () => {
         setLoadingDetails(true)
         try {
-            const responce = await fetch(`${backend_url}/item/getItems/${itemId}`, {
+            const responce = await fetch(`${backendUrl}/item/getItems/${itemId}`, {
                 method: 'GET',
             })
 
@@ -112,7 +112,7 @@ function ItemForm() {
         setLoadingSave(true)
 
         try {
-            const response = await fetch(`${backend_url}/item/create`, {
+            const response = await fetch(`${backendUrl}/item/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -144,7 +144,7 @@ function ItemForm() {
         setLoadingSave(true)
 
         try {
-            const response = await fetch(`${backend_url}/item/edit`, {
+            const response = await fetch(`${backendUrl}/item/edit`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'
